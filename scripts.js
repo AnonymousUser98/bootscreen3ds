@@ -51,8 +51,12 @@ $("#settings input, #settings select").on('change', function() {
 	var sd = $('select[name=sd] option:selected', "#settings").val();
 	var type = $('select[name=type] option:selected', "#settings").val();
 	
-	var line1 = $('select[name=type] option:selected', "#settings").text();
-	var line2 = $('select[name=copyOptions] option:selected', "#settings").text();
+	var line1 = $('select[name=type]', "#settings").val() == 'custom'
+	    ? $('input[name=type]', "#settings").val()
+	    : $('select[name=type] option:selected', "#settings").text();
+	var line2 = $('select[name=copyOptions]', "#settings").val() == 'custom'
+	    ? $('input[name=copyOptions]', "#settings").val()
+	    : $('select[name=copyOptions] option:selected', "#settings").text();
 	var processor = 0; var use_bootinput = false; var use_auxinput = false;
 
 	if ($('select[name=boottool] option:selected', "#settings").val() == 'custom') {
@@ -280,6 +284,8 @@ window.onload = function() {
 
 $('input[name=boottool]', "#settings").keyup(function() { $("#settings input").trigger('change'); });
 $('input[name=auxtool]', "#settings").keyup(function() { $("#settings input").trigger('change'); });
+$('input[name=type]', "#settings").keyup(function() { $("#settings input").trigger('change'); });
+$('input[name=copyOptions]', "#settings").keyup(function() { $("#settings input").trigger('change'); });
 
 
 /* Create a PNG downloadable of the canvas */
