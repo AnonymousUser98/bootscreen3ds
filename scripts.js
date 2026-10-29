@@ -67,6 +67,18 @@ $("#settings input, #settings select").on('change', function() {
 		use_auxinput = true;
 	}
 
+	if ($('select[name=type] option:selected', "#settings").val() == 'custom') {
+		$('input[name=type]', "#settings").show();
+		$('select[name=type]', "#settings").parent().hide();
+		use_auxinput = true;
+	}
+
+	if ($('select[name=copyOptions] option:selected', "#settings").val() == 'custom') {
+		$('input[name=copyOptions]', "#settings").show();
+		$('select[name=copyOptions]', "#settings").parent().hide();
+		use_auxinput = true;
+	}
+
 	switch(type) {
 		case 'luma2016':
 			$topscreen.attr('width', 400);
