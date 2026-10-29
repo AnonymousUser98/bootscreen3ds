@@ -238,7 +238,7 @@ $("#settings input, #settings select").on('change', function() {
 	// See if custom bottom text is enabled
 	var custom_bottom_bool = $('input[name=hold]', "#settings").is(':checked');
 
-	if (!custom_boot_bool) {
+	if (!custom_bottom_bool) {
 		// If custom bottom text is disabled
 		
 		if (!use_bootinput)
