@@ -236,7 +236,7 @@ $("#settings input, #settings select").on('change', function() {
 	write(0, 16*10, 'Detecting Primary Slave  ... '+ sd +' Card');
 
 	// See if custom bottom text is enabled
-	var custom_bottom_bool = $('input[name=hold]', "#settings").is(':checked');
+	var custom_bottom_bool = $('input[name=customBottom]', "#settings").is(':checked');
 
 	if (!custom_bottom_bool) {
 		// If custom bottom text is disabled
