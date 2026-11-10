@@ -28,7 +28,7 @@ var write = function(x, y, text, color = 'gray') {
 		$('#topscreen').drawText({
 			fillStyle: color,
 			x: x+2, y: y,
-			fontSize: 16,
+			fontSize: 8,
 			fontFamily: 'PerfectDOSVGA437Win',
 			align: 'left',
 			text: letter
