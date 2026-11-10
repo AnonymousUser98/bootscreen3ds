@@ -24,6 +24,14 @@ var write = function(x, y, text, color = 'white') {
 			else if (color == 'blue') color = 'white';
 		}
 
+		// Use backtick ` for green text
+		if (letter == '`') {
+			text = text.substr(1);
+			letter = text.substr(0,1);
+			if (color == 'white') color = 'green';
+			else if (color == 'green') color = 'white';
+		}
+
 		/* Draw 1 character */
 		$('#topscreen').drawText({
 			fillStyle: color,
