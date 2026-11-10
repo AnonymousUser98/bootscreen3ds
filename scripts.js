@@ -293,7 +293,9 @@ $("#settings input, #settings select").on('change', function() {
 
 });
 
-window.onload = function() {
+window.onload = async function() {
+	await document.fonts.load('8px unscii-8');
+	await document.fonts.load('8px unscii-8-thin');
 	
 	$('canvas').drawImage({
 		source: 'images/symbols.png',
