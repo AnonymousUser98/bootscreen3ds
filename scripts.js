@@ -12,7 +12,7 @@ if (window.location.protocol == 'file:' && window.navigator.vendor == "Google In
 /* jCanvas has an option for write full strings but don't have a option for control letter spacing.
 The font has a letter spacing of 2px, and the generator needs a spacing of 1px.
 This function allows to write character by character with only 1px of spacing. */
-var write = function(x, y, text, color = 'gray') {
+var write = function(x, y, text, color = 'white') {
 	while (text != '') {
 		var letter = text.substr(0,1);
 	
@@ -20,8 +20,8 @@ var write = function(x, y, text, color = 'gray') {
 		if (letter == '_') {
 			text = text.substr(1);
 			letter = text.substr(0,1);
-			if (color == 'gray') color = 'white';
-			else if (color == 'white') color = 'gray';
+			if (color == 'white') color = 'blue';
+			else if (color == 'blue') color = 'white';
 		}
 
 		/* Draw 1 character */
